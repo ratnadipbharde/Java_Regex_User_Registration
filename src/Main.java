@@ -8,11 +8,18 @@ public class Main {
         System.out.println("Regex User Registration");
         Main main = new Main();
         System.out.println("Enter First Name and Last Name : ");
-        String name = scanner.nextLine();
-        System.out.println(main.validateFirstName(name));
+        String firstNameAndLastName = scanner.nextLine();
+        System.out.println(main.validateFirstName(firstNameAndLastName));
+        System.out.println("Enter email Id : ");
+        String email = scanner.nextLine();
+        System.out.println(main.validateEmail(email));
     }
 
-    private boolean validateFirstName(String name) {
-        return Pattern.matches("^[A-Z][a-z]{2,}[' '][A-Z][a-z]{2,}$", name);
+    private boolean validateEmail(String email) {
+        return Pattern.matches("^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\. [a-zA-Z0-9-]+)*$", email);
+    }
+
+    private boolean validateFirstName(String firstNameAndLastName) {
+        return Pattern.matches("^[A-Z][a-z]{2,}[' '][A-Z][a-z]{2,}$", firstNameAndLastName);
     }
 }
