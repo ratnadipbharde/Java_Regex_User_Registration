@@ -16,6 +16,13 @@ public class Main {
         System.out.println("Enter Mobile Number : ");
         String mobileNumber = scanner.nextLine();
         System.out.println(main.validateMobileNumber(mobileNumber));
+        System.out.println("Enter Password : ");
+        String password = scanner.nextLine();
+        System.out.println(main.validatePassword(password));
+    }
+
+    private boolean validatePassword(String password) {
+        return Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", password);
     }
 
     private boolean validateMobileNumber(String mobileNumber) {
