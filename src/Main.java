@@ -13,6 +13,13 @@ public class Main {
         System.out.println("Enter email Id : ");
         String email = scanner.nextLine();
         System.out.println(main.validateEmail(email));
+        System.out.println("Enter Mobile Number : ");
+        String mobileNumber = scanner.nextLine();
+        System.out.println(main.validateMobileNumber(mobileNumber));
+    }
+
+    private boolean validateMobileNumber(String mobileNumber) {
+        return Pattern.matches("^(0|[0-9]{1,5})?([0-9]{10})$", mobileNumber);
     }
 
     private boolean validateEmail(String email) {
